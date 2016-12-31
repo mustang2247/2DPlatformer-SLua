@@ -712,12 +712,58 @@ public class Lua_UnityEngine_Animator : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static public int GetCurrentAnimatorClipInfo(IntPtr l) {
+	static public int GetCurrentAnimatorClipInfoCount(IntPtr l) {
 		try {
 			UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
 			System.Int32 a1;
 			checkType(l,2,out a1);
-			var ret=self.GetCurrentAnimatorClipInfo(a1);
+			var ret=self.GetCurrentAnimatorClipInfoCount(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int GetCurrentAnimatorClipInfo(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==2){
+				UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				var ret=self.GetCurrentAnimatorClipInfo(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==3){
+				UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				System.Collections.Generic.List<UnityEngine.AnimatorClipInfo> a2;
+				checkType(l,3,out a2);
+				self.GetCurrentAnimatorClipInfo(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int GetNextAnimatorClipInfoCount(IntPtr l) {
+		try {
+			UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
+			System.Int32 a1;
+			checkType(l,2,out a1);
+			var ret=self.GetNextAnimatorClipInfoCount(a1);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -729,12 +775,28 @@ public class Lua_UnityEngine_Animator : LuaObject {
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int GetNextAnimatorClipInfo(IntPtr l) {
 		try {
-			UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
-			System.Int32 a1;
-			checkType(l,2,out a1);
-			var ret=self.GetNextAnimatorClipInfo(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==2){
+				UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				var ret=self.GetNextAnimatorClipInfo(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==3){
+				UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				System.Collections.Generic.List<UnityEngine.AnimatorClipInfo> a2;
+				checkType(l,3,out a2);
+				self.GetNextAnimatorClipInfo(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -2096,7 +2158,9 @@ public class Lua_UnityEngine_Animator : LuaObject {
 		addMember(l,GetCurrentAnimatorStateInfo);
 		addMember(l,GetNextAnimatorStateInfo);
 		addMember(l,GetAnimatorTransitionInfo);
+		addMember(l,GetCurrentAnimatorClipInfoCount);
 		addMember(l,GetCurrentAnimatorClipInfo);
+		addMember(l,GetNextAnimatorClipInfoCount);
 		addMember(l,GetNextAnimatorClipInfo);
 		addMember(l,IsInTransition);
 		addMember(l,GetParameter);

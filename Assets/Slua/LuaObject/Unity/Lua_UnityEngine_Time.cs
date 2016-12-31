@@ -143,6 +143,30 @@ public class Lua_UnityEngine_Time : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_maximumParticleDeltaTime(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Time.maximumParticleDeltaTime);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_maximumParticleDeltaTime(IntPtr l) {
+		try {
+			float v;
+			checkType(l,2,out v);
+			UnityEngine.Time.maximumParticleDeltaTime=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int get_timeScale(IntPtr l) {
 		try {
 			pushValue(l,true);
@@ -234,6 +258,7 @@ public class Lua_UnityEngine_Time : LuaObject {
 		addMember(l,"fixedDeltaTime",get_fixedDeltaTime,set_fixedDeltaTime,false);
 		addMember(l,"maximumDeltaTime",get_maximumDeltaTime,set_maximumDeltaTime,false);
 		addMember(l,"smoothDeltaTime",get_smoothDeltaTime,null,false);
+		addMember(l,"maximumParticleDeltaTime",get_maximumParticleDeltaTime,set_maximumParticleDeltaTime,false);
 		addMember(l,"timeScale",get_timeScale,set_timeScale,false);
 		addMember(l,"frameCount",get_frameCount,null,false);
 		addMember(l,"renderedFrameCount",get_renderedFrameCount,null,false);

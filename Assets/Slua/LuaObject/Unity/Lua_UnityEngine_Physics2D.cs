@@ -114,6 +114,35 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int SetLayerCollisionMask_s(IntPtr l) {
+		try {
+			System.Int32 a1;
+			checkType(l,1,out a1);
+			System.Int32 a2;
+			checkType(l,2,out a2);
+			UnityEngine.Physics2D.SetLayerCollisionMask(a1,a2);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int GetLayerCollisionMask_s(IntPtr l) {
+		try {
+			System.Int32 a1;
+			checkType(l,1,out a1);
+			var ret=UnityEngine.Physics2D.GetLayerCollisionMask(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int IsTouching_s(IntPtr l) {
 		try {
 			UnityEngine.Collider2D a1;
@@ -1218,6 +1247,352 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int CapsuleCast_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				var ret=UnityEngine.Physics2D.CapsuleCast(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.CapsuleCast(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==7){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Int32 a7;
+				checkType(l,7,out a7);
+				var ret=UnityEngine.Physics2D.CapsuleCast(a1,a2,a3,a4,a5,a6,a7);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==8){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Int32 a7;
+				checkType(l,7,out a7);
+				System.Single a8;
+				checkType(l,8,out a8);
+				var ret=UnityEngine.Physics2D.CapsuleCast(a1,a2,a3,a4,a5,a6,a7,a8);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==9){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Int32 a7;
+				checkType(l,7,out a7);
+				System.Single a8;
+				checkType(l,8,out a8);
+				System.Single a9;
+				checkType(l,9,out a9);
+				var ret=UnityEngine.Physics2D.CapsuleCast(a1,a2,a3,a4,a5,a6,a7,a8,a9);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int CapsuleCastAll_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				var ret=UnityEngine.Physics2D.CapsuleCastAll(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.CapsuleCastAll(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==7){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Int32 a7;
+				checkType(l,7,out a7);
+				var ret=UnityEngine.Physics2D.CapsuleCastAll(a1,a2,a3,a4,a5,a6,a7);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==8){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Int32 a7;
+				checkType(l,7,out a7);
+				System.Single a8;
+				checkType(l,8,out a8);
+				var ret=UnityEngine.Physics2D.CapsuleCastAll(a1,a2,a3,a4,a5,a6,a7,a8);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==9){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Int32 a7;
+				checkType(l,7,out a7);
+				System.Single a8;
+				checkType(l,8,out a8);
+				System.Single a9;
+				checkType(l,9,out a9);
+				var ret=UnityEngine.Physics2D.CapsuleCastAll(a1,a2,a3,a4,a5,a6,a7,a8,a9);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int CapsuleCastNonAlloc_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				UnityEngine.RaycastHit2D[] a6;
+				checkArray(l,6,out a6);
+				var ret=UnityEngine.Physics2D.CapsuleCastNonAlloc(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==7){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				UnityEngine.RaycastHit2D[] a6;
+				checkArray(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				var ret=UnityEngine.Physics2D.CapsuleCastNonAlloc(a1,a2,a3,a4,a5,a6,a7);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==8){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				UnityEngine.RaycastHit2D[] a6;
+				checkArray(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				System.Int32 a8;
+				checkType(l,8,out a8);
+				var ret=UnityEngine.Physics2D.CapsuleCastNonAlloc(a1,a2,a3,a4,a5,a6,a7,a8);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==9){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				UnityEngine.RaycastHit2D[] a6;
+				checkArray(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				System.Int32 a8;
+				checkType(l,8,out a8);
+				System.Single a9;
+				checkType(l,9,out a9);
+				var ret=UnityEngine.Physics2D.CapsuleCastNonAlloc(a1,a2,a3,a4,a5,a6,a7,a8,a9);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==10){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Vector2 a5;
+				checkType(l,5,out a5);
+				UnityEngine.RaycastHit2D[] a6;
+				checkArray(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				System.Int32 a8;
+				checkType(l,8,out a8);
+				System.Single a9;
+				checkType(l,9,out a9);
+				System.Single a10;
+				checkType(l,10,out a10);
+				var ret=UnityEngine.Physics2D.CapsuleCastNonAlloc(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int GetRayIntersection_s(IntPtr l) {
 		try {
 			int argc = LuaDLL.lua_gettop(l);
@@ -1726,6 +2101,230 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int OverlapBox_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==3){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				var ret=UnityEngine.Physics2D.OverlapBox(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==4){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				System.Int32 a4;
+				checkType(l,4,out a4);
+				var ret=UnityEngine.Physics2D.OverlapBox(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				System.Int32 a4;
+				checkType(l,4,out a4);
+				System.Single a5;
+				checkType(l,5,out a5);
+				var ret=UnityEngine.Physics2D.OverlapBox(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				System.Int32 a4;
+				checkType(l,4,out a4);
+				System.Single a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.OverlapBox(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int OverlapBoxAll_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==3){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				var ret=UnityEngine.Physics2D.OverlapBoxAll(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==4){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				System.Int32 a4;
+				checkType(l,4,out a4);
+				var ret=UnityEngine.Physics2D.OverlapBoxAll(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				System.Int32 a4;
+				checkType(l,4,out a4);
+				System.Single a5;
+				checkType(l,5,out a5);
+				var ret=UnityEngine.Physics2D.OverlapBoxAll(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				System.Int32 a4;
+				checkType(l,4,out a4);
+				System.Single a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.OverlapBoxAll(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int OverlapBoxNonAlloc_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==4){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				UnityEngine.Collider2D[] a4;
+				checkArray(l,4,out a4);
+				var ret=UnityEngine.Physics2D.OverlapBoxNonAlloc(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				UnityEngine.Collider2D[] a4;
+				checkArray(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				var ret=UnityEngine.Physics2D.OverlapBoxNonAlloc(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				UnityEngine.Collider2D[] a4;
+				checkArray(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.OverlapBoxNonAlloc(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==7){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				UnityEngine.Collider2D[] a4;
+				checkArray(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				var ret=UnityEngine.Physics2D.OverlapBoxNonAlloc(a1,a2,a3,a4,a5,a6,a7);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int OverlapArea_s(IntPtr l) {
 		try {
 			int argc = LuaDLL.lua_gettop(l);
@@ -1913,6 +2512,254 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 				System.Single a6;
 				checkType(l,6,out a6);
 				var ret=UnityEngine.Physics2D.OverlapAreaNonAlloc(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int OverlapCapsule_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==4){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				var ret=UnityEngine.Physics2D.OverlapCapsule(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				var ret=UnityEngine.Physics2D.OverlapCapsule(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.OverlapCapsule(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==7){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				var ret=UnityEngine.Physics2D.OverlapCapsule(a1,a2,a3,a4,a5,a6,a7);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int OverlapCapsuleAll_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==4){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleAll(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleAll(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleAll(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==7){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				System.Int32 a5;
+				checkType(l,5,out a5);
+				System.Single a6;
+				checkType(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleAll(a1,a2,a3,a4,a5,a6,a7);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int OverlapCapsuleNonAlloc_s(IntPtr l) {
+		try {
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==5){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Collider2D[] a5;
+				checkArray(l,5,out a5);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleNonAlloc(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==6){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Collider2D[] a5;
+				checkArray(l,5,out a5);
+				System.Int32 a6;
+				checkType(l,6,out a6);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleNonAlloc(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==7){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Collider2D[] a5;
+				checkArray(l,5,out a5);
+				System.Int32 a6;
+				checkType(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleNonAlloc(a1,a2,a3,a4,a5,a6,a7);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==8){
+				UnityEngine.Vector2 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector2 a2;
+				checkType(l,2,out a2);
+				UnityEngine.CapsuleDirection2D a3;
+				checkEnum(l,3,out a3);
+				System.Single a4;
+				checkType(l,4,out a4);
+				UnityEngine.Collider2D[] a5;
+				checkArray(l,5,out a5);
+				System.Int32 a6;
+				checkType(l,6,out a6);
+				System.Single a7;
+				checkType(l,7,out a7);
+				System.Single a8;
+				checkType(l,8,out a8);
+				var ret=UnityEngine.Physics2D.OverlapCapsuleNonAlloc(a1,a2,a3,a4,a5,a6,a7,a8);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
@@ -2366,12 +3213,230 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 			return error(l,e);
 		}
 	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_alwaysShowColliders(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.alwaysShowColliders);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_alwaysShowColliders(IntPtr l) {
+		try {
+			bool v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.alwaysShowColliders=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_showColliderSleep(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.showColliderSleep);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_showColliderSleep(IntPtr l) {
+		try {
+			bool v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.showColliderSleep=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_showColliderContacts(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.showColliderContacts);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_showColliderContacts(IntPtr l) {
+		try {
+			bool v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.showColliderContacts=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_showColliderAABB(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.showColliderAABB);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_showColliderAABB(IntPtr l) {
+		try {
+			bool v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.showColliderAABB=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_contactArrowScale(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.contactArrowScale);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_contactArrowScale(IntPtr l) {
+		try {
+			float v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.contactArrowScale=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_colliderAwakeColor(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.colliderAwakeColor);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_colliderAwakeColor(IntPtr l) {
+		try {
+			UnityEngine.Color v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.colliderAwakeColor=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_colliderAsleepColor(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.colliderAsleepColor);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_colliderAsleepColor(IntPtr l) {
+		try {
+			UnityEngine.Color v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.colliderAsleepColor=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_colliderContactColor(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.colliderContactColor);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_colliderContactColor(IntPtr l) {
+		try {
+			UnityEngine.Color v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.colliderContactColor=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_colliderAABBColor(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Physics2D.colliderAABBColor);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_colliderAABBColor(IntPtr l) {
+		try {
+			UnityEngine.Color v;
+			checkType(l,2,out v);
+			UnityEngine.Physics2D.colliderAABBColor=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Physics2D");
 		addMember(l,IgnoreCollision_s);
 		addMember(l,GetIgnoreCollision_s);
 		addMember(l,IgnoreLayerCollision_s);
 		addMember(l,GetIgnoreLayerCollision_s);
+		addMember(l,SetLayerCollisionMask_s);
+		addMember(l,GetLayerCollisionMask_s);
 		addMember(l,IsTouching_s);
 		addMember(l,IsTouchingLayers_s);
 		addMember(l,Linecast_s);
@@ -2386,6 +3451,9 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 		addMember(l,BoxCast_s);
 		addMember(l,BoxCastAll_s);
 		addMember(l,BoxCastNonAlloc_s);
+		addMember(l,CapsuleCast_s);
+		addMember(l,CapsuleCastAll_s);
+		addMember(l,CapsuleCastNonAlloc_s);
 		addMember(l,GetRayIntersection_s);
 		addMember(l,GetRayIntersectionAll_s);
 		addMember(l,GetRayIntersectionNonAlloc_s);
@@ -2395,9 +3463,15 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 		addMember(l,OverlapCircle_s);
 		addMember(l,OverlapCircleAll_s);
 		addMember(l,OverlapCircleNonAlloc_s);
+		addMember(l,OverlapBox_s);
+		addMember(l,OverlapBoxAll_s);
+		addMember(l,OverlapBoxNonAlloc_s);
 		addMember(l,OverlapArea_s);
 		addMember(l,OverlapAreaAll_s);
 		addMember(l,OverlapAreaNonAlloc_s);
+		addMember(l,OverlapCapsule_s);
+		addMember(l,OverlapCapsuleAll_s);
+		addMember(l,OverlapCapsuleNonAlloc_s);
 		addMember(l,"IgnoreRaycastLayer",get_IgnoreRaycastLayer,null,false);
 		addMember(l,"DefaultRaycastLayers",get_DefaultRaycastLayers,null,false);
 		addMember(l,"AllLayers",get_AllLayers,null,false);
@@ -2418,6 +3492,15 @@ public class Lua_UnityEngine_Physics2D : LuaObject {
 		addMember(l,"timeToSleep",get_timeToSleep,set_timeToSleep,false);
 		addMember(l,"linearSleepTolerance",get_linearSleepTolerance,set_linearSleepTolerance,false);
 		addMember(l,"angularSleepTolerance",get_angularSleepTolerance,set_angularSleepTolerance,false);
+		addMember(l,"alwaysShowColliders",get_alwaysShowColliders,set_alwaysShowColliders,false);
+		addMember(l,"showColliderSleep",get_showColliderSleep,set_showColliderSleep,false);
+		addMember(l,"showColliderContacts",get_showColliderContacts,set_showColliderContacts,false);
+		addMember(l,"showColliderAABB",get_showColliderAABB,set_showColliderAABB,false);
+		addMember(l,"contactArrowScale",get_contactArrowScale,set_contactArrowScale,false);
+		addMember(l,"colliderAwakeColor",get_colliderAwakeColor,set_colliderAwakeColor,false);
+		addMember(l,"colliderAsleepColor",get_colliderAsleepColor,set_colliderAsleepColor,false);
+		addMember(l,"colliderContactColor",get_colliderContactColor,set_colliderContactColor,false);
+		addMember(l,"colliderAABBColor",get_colliderAABBColor,set_colliderAABBColor,false);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Physics2D));
 	}
 }

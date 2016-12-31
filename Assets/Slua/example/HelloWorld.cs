@@ -176,13 +176,13 @@ public class HelloWorld
 
 	public void perf()
 	{
-		Profiler.BeginSample("create 1000000 vector3/cs");
+		UnityEngine.Profiling.Profiler.BeginSample("create 1000000 vector3/cs");
 		for (int n = 0; n < 1000000; n++)
 		{
 			Vector3 v = new Vector3(n, n, n);
 			v.Normalize();
 		}
-		Profiler.EndSample();
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
 
 	static public void testvec3(Vector3 v)

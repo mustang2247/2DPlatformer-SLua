@@ -40,6 +40,17 @@ public class Lua_UnityEngine_Application : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int Unload_s(IntPtr l) {
+		try {
+			UnityEngine.Application.Unload();
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int GetStreamProgressForLevel_s(IntPtr l) {
 		try {
 			int argc = LuaDLL.lua_gettop(l);
@@ -170,6 +181,35 @@ public class Lua_UnityEngine_Application : LuaObject {
 			System.String a1;
 			checkType(l,1,out a1);
 			UnityEngine.Application.OpenURL(a1);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int GetStackTraceLogType_s(IntPtr l) {
+		try {
+			UnityEngine.LogType a1;
+			checkEnum(l,1,out a1);
+			var ret=UnityEngine.Application.GetStackTraceLogType(a1);
+			pushValue(l,true);
+			pushEnum(l,(int)ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int SetStackTraceLogType_s(IntPtr l) {
+		try {
+			UnityEngine.LogType a1;
+			checkEnum(l,1,out a1);
+			UnityEngine.StackTraceLogType a2;
+			checkEnum(l,2,out a2);
+			UnityEngine.Application.SetStackTraceLogType(a1,a2);
 			pushValue(l,true);
 			return 1;
 		}
@@ -395,6 +435,17 @@ public class Lua_UnityEngine_Application : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_installerName(IntPtr l) {
+		try {
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Application.installerName);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int get_bundleIdentifier(IntPtr l) {
 		try {
 			pushValue(l,true);
@@ -461,28 +512,6 @@ public class Lua_UnityEngine_Application : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static public int get_webSecurityEnabled(IntPtr l) {
-		try {
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Application.webSecurityEnabled);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-	}
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static public int get_webSecurityHostUrl(IntPtr l) {
-		try {
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Application.webSecurityHostUrl);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-	}
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int get_targetFrameRate(IntPtr l) {
 		try {
 			pushValue(l,true);
@@ -512,30 +541,6 @@ public class Lua_UnityEngine_Application : LuaObject {
 			pushValue(l,true);
 			pushEnum(l,(int)UnityEngine.Application.systemLanguage);
 			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-	}
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static public int get_stackTraceLogType(IntPtr l) {
-		try {
-			pushValue(l,true);
-			pushEnum(l,(int)UnityEngine.Application.stackTraceLogType);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-	}
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static public int set_stackTraceLogType(IntPtr l) {
-		try {
-			UnityEngine.StackTraceLogType v;
-			checkEnum(l,2,out v);
-			UnityEngine.Application.stackTraceLogType=v;
-			pushValue(l,true);
-			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -613,6 +618,7 @@ public class Lua_UnityEngine_Application : LuaObject {
 		getTypeTable(l,"UnityEngine.Application");
 		addMember(l,Quit_s);
 		addMember(l,CancelQuit_s);
+		addMember(l,Unload_s);
 		addMember(l,GetStreamProgressForLevel_s);
 		addMember(l,CanStreamedLevelBeLoaded_s);
 		addMember(l,CaptureScreenshot_s);
@@ -620,6 +626,8 @@ public class Lua_UnityEngine_Application : LuaObject {
 		addMember(l,ExternalCall_s);
 		addMember(l,RequestAdvertisingIdentifierAsync_s);
 		addMember(l,OpenURL_s);
+		addMember(l,GetStackTraceLogType_s);
+		addMember(l,SetStackTraceLogType_s);
 		addMember(l,RequestUserAuthorization_s);
 		addMember(l,HasUserAuthorization_s);
 		addMember(l,"streamedBytes",get_streamedBytes,null,false);
@@ -638,17 +646,15 @@ public class Lua_UnityEngine_Application : LuaObject {
 		addMember(l,"absoluteURL",get_absoluteURL,null,false);
 		addMember(l,"unityVersion",get_unityVersion,null,false);
 		addMember(l,"version",get_version,null,false);
+		addMember(l,"installerName",get_installerName,null,false);
 		addMember(l,"bundleIdentifier",get_bundleIdentifier,null,false);
 		addMember(l,"installMode",get_installMode,null,false);
 		addMember(l,"sandboxType",get_sandboxType,null,false);
 		addMember(l,"productName",get_productName,null,false);
 		addMember(l,"companyName",get_companyName,null,false);
 		addMember(l,"cloudProjectId",get_cloudProjectId,null,false);
-		addMember(l,"webSecurityEnabled",get_webSecurityEnabled,null,false);
-		addMember(l,"webSecurityHostUrl",get_webSecurityHostUrl,null,false);
 		addMember(l,"targetFrameRate",get_targetFrameRate,set_targetFrameRate,false);
 		addMember(l,"systemLanguage",get_systemLanguage,null,false);
-		addMember(l,"stackTraceLogType",get_stackTraceLogType,set_stackTraceLogType,false);
 		addMember(l,"backgroundLoadingPriority",get_backgroundLoadingPriority,set_backgroundLoadingPriority,false);
 		addMember(l,"internetReachability",get_internetReachability,null,false);
 		addMember(l,"genuine",get_genuine,null,false);

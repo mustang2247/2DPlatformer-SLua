@@ -465,6 +465,18 @@ public class Lua_UnityEngine_AudioSource : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_isVirtual(IntPtr l) {
+		try {
+			UnityEngine.AudioSource self=(UnityEngine.AudioSource)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.isVirtual);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int get_loop(IntPtr l) {
 		try {
 			UnityEngine.AudioSource self=(UnityEngine.AudioSource)checkSelf(l);
@@ -665,6 +677,32 @@ public class Lua_UnityEngine_AudioSource : LuaObject {
 			bool v;
 			checkType(l,2,out v);
 			self.spatialize=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_spatializePostEffects(IntPtr l) {
+		try {
+			UnityEngine.AudioSource self=(UnityEngine.AudioSource)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.spatializePostEffects);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_spatializePostEffects(IntPtr l) {
+		try {
+			UnityEngine.AudioSource self=(UnityEngine.AudioSource)checkSelf(l);
+			bool v;
+			checkType(l,2,out v);
+			self.spatializePostEffects=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -983,6 +1021,7 @@ public class Lua_UnityEngine_AudioSource : LuaObject {
 		addMember(l,"clip",get_clip,set_clip,true);
 		addMember(l,"outputAudioMixerGroup",get_outputAudioMixerGroup,set_outputAudioMixerGroup,true);
 		addMember(l,"isPlaying",get_isPlaying,null,true);
+		addMember(l,"isVirtual",get_isVirtual,null,true);
 		addMember(l,"loop",get_loop,set_loop,true);
 		addMember(l,"ignoreListenerVolume",get_ignoreListenerVolume,set_ignoreListenerVolume,true);
 		addMember(l,"playOnAwake",get_playOnAwake,set_playOnAwake,true);
@@ -991,6 +1030,7 @@ public class Lua_UnityEngine_AudioSource : LuaObject {
 		addMember(l,"panStereo",get_panStereo,set_panStereo,true);
 		addMember(l,"spatialBlend",get_spatialBlend,set_spatialBlend,true);
 		addMember(l,"spatialize",get_spatialize,set_spatialize,true);
+		addMember(l,"spatializePostEffects",get_spatializePostEffects,set_spatializePostEffects,true);
 		addMember(l,"reverbZoneMix",get_reverbZoneMix,set_reverbZoneMix,true);
 		addMember(l,"bypassEffects",get_bypassEffects,set_bypassEffects,true);
 		addMember(l,"bypassListenerEffects",get_bypassListenerEffects,set_bypassListenerEffects,true);

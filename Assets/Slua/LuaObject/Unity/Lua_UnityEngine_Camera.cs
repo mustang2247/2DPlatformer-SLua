@@ -98,14 +98,29 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static public int SetStereoViewMatrices(IntPtr l) {
+	static public int GetStereoViewMatrix(IntPtr l) {
 		try {
 			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
-			UnityEngine.Matrix4x4 a1;
-			checkValueType(l,2,out a1);
+			UnityEngine.Camera.StereoscopicEye a1;
+			checkEnum(l,2,out a1);
+			var ret=self.GetStereoViewMatrix(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int SetStereoViewMatrix(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			UnityEngine.Camera.StereoscopicEye a1;
+			checkEnum(l,2,out a1);
 			UnityEngine.Matrix4x4 a2;
 			checkValueType(l,3,out a2);
-			self.SetStereoViewMatrices(a1,a2);
+			self.SetStereoViewMatrix(a1,a2);
 			pushValue(l,true);
 			return 1;
 		}
@@ -126,14 +141,49 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static public int SetStereoProjectionMatrices(IntPtr l) {
+	static public int GetStereoProjectionMatrix(IntPtr l) {
 		try {
 			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
-			UnityEngine.Matrix4x4 a1;
-			checkValueType(l,2,out a1);
+			UnityEngine.Camera.StereoscopicEye a1;
+			checkEnum(l,2,out a1);
+			var ret=self.GetStereoProjectionMatrix(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int SetStereoProjectionMatrix(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			UnityEngine.Camera.StereoscopicEye a1;
+			checkEnum(l,2,out a1);
 			UnityEngine.Matrix4x4 a2;
 			checkValueType(l,3,out a2);
-			self.SetStereoProjectionMatrices(a1,a2);
+			self.SetStereoProjectionMatrix(a1,a2);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int CalculateFrustumCorners(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			UnityEngine.Rect a1;
+			checkValueType(l,2,out a1);
+			System.Single a2;
+			checkType(l,3,out a2);
+			UnityEngine.Camera.MonoOrStereoscopicEye a3;
+			checkEnum(l,4,out a3);
+			UnityEngine.Vector3[] a4;
+			checkArray(l,5,out a4);
+			self.CalculateFrustumCorners(a1,a2,a3,a4);
 			pushValue(l,true);
 			return 1;
 		}
@@ -322,6 +372,18 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		try {
 			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
 			self.ResetReplacementShader();
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int ResetCullingMatrix(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			self.ResetCullingMatrix();
 			pushValue(l,true);
 			return 1;
 		}
@@ -1110,6 +1172,58 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_nonJitteredProjectionMatrix(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.nonJitteredProjectionMatrix);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_nonJitteredProjectionMatrix(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			UnityEngine.Matrix4x4 v;
+			checkValueType(l,2,out v);
+			self.nonJitteredProjectionMatrix=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_useJitteredProjectionMatrixForTransparentRendering(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.useJitteredProjectionMatrixForTransparentRendering);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_useJitteredProjectionMatrixForTransparentRendering(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			bool v;
+			checkType(l,2,out v);
+			self.useJitteredProjectionMatrixForTransparentRendering=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int get_velocity(IntPtr l) {
 		try {
 			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
@@ -1264,6 +1378,44 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		}
 	}
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_stereoTargetEye(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			pushValue(l,true);
+			pushEnum(l,(int)self.stereoTargetEye);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_stereoTargetEye(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			UnityEngine.StereoTargetEyeMask v;
+			checkEnum(l,2,out v);
+			self.stereoTargetEye=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_stereoActiveEye(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			pushValue(l,true);
+			pushEnum(l,(int)self.stereoActiveEye);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static public int get_targetDisplay(IntPtr l) {
 		try {
 			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
@@ -1352,6 +1504,32 @@ public class Lua_UnityEngine_Camera : LuaObject {
 			bool v;
 			checkType(l,2,out v);
 			self.useOcclusionCulling=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int get_cullingMatrix(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.cullingMatrix);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+	}
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static public int set_cullingMatrix(IntPtr l) {
+		try {
+			UnityEngine.Camera self=(UnityEngine.Camera)checkSelf(l);
+			UnityEngine.Matrix4x4 v;
+			checkValueType(l,2,out v);
+			self.cullingMatrix=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -1482,9 +1660,12 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		addMember(l,ResetProjectionMatrix);
 		addMember(l,ResetAspect);
 		addMember(l,ResetFieldOfView);
-		addMember(l,SetStereoViewMatrices);
+		addMember(l,GetStereoViewMatrix);
+		addMember(l,SetStereoViewMatrix);
 		addMember(l,ResetStereoViewMatrices);
-		addMember(l,SetStereoProjectionMatrices);
+		addMember(l,GetStereoProjectionMatrix);
+		addMember(l,SetStereoProjectionMatrix);
+		addMember(l,CalculateFrustumCorners);
 		addMember(l,ResetStereoProjectionMatrices);
 		addMember(l,WorldToScreenPoint);
 		addMember(l,WorldToViewportPoint);
@@ -1498,6 +1679,7 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		addMember(l,RenderWithShader);
 		addMember(l,SetReplacementShader);
 		addMember(l,ResetReplacementShader);
+		addMember(l,ResetCullingMatrix);
 		addMember(l,RenderDontRestore);
 		addMember(l,RenderToCubemap);
 		addMember(l,CopyFrom);
@@ -1535,6 +1717,8 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		addMember(l,"cameraToWorldMatrix",get_cameraToWorldMatrix,null,true);
 		addMember(l,"worldToCameraMatrix",get_worldToCameraMatrix,set_worldToCameraMatrix,true);
 		addMember(l,"projectionMatrix",get_projectionMatrix,set_projectionMatrix,true);
+		addMember(l,"nonJitteredProjectionMatrix",get_nonJitteredProjectionMatrix,set_nonJitteredProjectionMatrix,true);
+		addMember(l,"useJitteredProjectionMatrixForTransparentRendering",get_useJitteredProjectionMatrixForTransparentRendering,set_useJitteredProjectionMatrixForTransparentRendering,true);
 		addMember(l,"velocity",get_velocity,null,true);
 		addMember(l,"clearFlags",get_clearFlags,set_clearFlags,true);
 		addMember(l,"stereoEnabled",get_stereoEnabled,null,true);
@@ -1542,12 +1726,15 @@ public class Lua_UnityEngine_Camera : LuaObject {
 		addMember(l,"stereoConvergence",get_stereoConvergence,set_stereoConvergence,true);
 		addMember(l,"cameraType",get_cameraType,set_cameraType,true);
 		addMember(l,"stereoMirrorMode",get_stereoMirrorMode,set_stereoMirrorMode,true);
+		addMember(l,"stereoTargetEye",get_stereoTargetEye,set_stereoTargetEye,true);
+		addMember(l,"stereoActiveEye",get_stereoActiveEye,null,true);
 		addMember(l,"targetDisplay",get_targetDisplay,set_targetDisplay,true);
 		addMember(l,"main",get_main,null,false);
 		addMember(l,"current",get_current,null,false);
 		addMember(l,"allCameras",get_allCameras,null,false);
 		addMember(l,"allCamerasCount",get_allCamerasCount,null,false);
 		addMember(l,"useOcclusionCulling",get_useOcclusionCulling,set_useOcclusionCulling,true);
+		addMember(l,"cullingMatrix",get_cullingMatrix,set_cullingMatrix,true);
 		addMember(l,"layerCullDistances",get_layerCullDistances,set_layerCullDistances,true);
 		addMember(l,"layerCullSpherical",get_layerCullSpherical,set_layerCullSpherical,true);
 		addMember(l,"depthTextureMode",get_depthTextureMode,set_depthTextureMode,true);
