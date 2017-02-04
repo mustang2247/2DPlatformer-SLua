@@ -16,7 +16,7 @@ require "Logic/LgSetupFiles"
 
 -- To create manager.
 local function CreateManager()
-    --print("Main:CreateManager")
+    print("Main:CreateManager")
     
     -- Create dispatcher and mono behaviour updater first.
     YwDispatcher.Instance():Validate()
@@ -27,7 +27,7 @@ end
 
 -- To init manager.
 local function InitManager()
-    --print("Main:InitManager")
+    print("Main:InitManager")
 
     -- Init manager.
 end
@@ -51,7 +51,7 @@ end
 
 -- The global main function.
 local function main()
-    --print("Main:main")
+    print("Main:main")
 
     -- Create manager.
     CreateManager()

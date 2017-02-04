@@ -1,5 +1,5 @@
 ﻿/**
- * Destroyer class.
+ * Destroyer class. 破坏者
  *
  * @filename  LgDestroyer.cs
  * @copyright Copyright (c) 2015 Yaukey/yaukeywang/WangYaoqi (yaukeywang@gmail.com) all rights reserved.

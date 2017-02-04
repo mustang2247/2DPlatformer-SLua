@@ -1,5 +1,5 @@
 ﻿/**
- * The YwGlobal class.
+ * The YwGlobal class. 主入口类
  *
  * @filename  YwGlobal.cs
  * @copyright Copyright (c) 2015 Yaukey/yaukeywang/WangYaoqi (yaukeywang@gmail.com) all rights reserved.
@@ -14,7 +14,7 @@ using System.Collections;
 // The global object that not be destroyed.
 public class YwGlobal : MonoBehaviour
 {
-    // The lite update fps.
+    // The lite update fps. 帧频调节
     public int m_liteUpdateFps = 10;
 
     // The lite upate flag.
