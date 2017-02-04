@@ -1,5 +1,5 @@
 --
--- Lua global definition file.
+-- Lua global definition file. Lua全局定义文件
 --
 -- @filename  YwGlobal.lua
 -- @copyright Copyright (c) 2015 Yaukey/yaukeywang/WangYaoqi (yaukeywang@gmail.com) all rights reserved.

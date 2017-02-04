@@ -64,6 +64,7 @@ local function main()
 end
 
 -- The main logic update entry.
+-- 更新
 local function Update()
     --print("Main:Update")
 
@@ -75,6 +76,7 @@ local function Update()
 end
 
 -- The main logic late update entry.
+-- 延迟更新
 local function LateUpdate()
     --print("Main:LateUpdate")
 
@@ -83,6 +85,7 @@ local function LateUpdate()
 end
 
 -- The main logic fixed update entry.
+-- 热修复
 local function FixedUpdate()
     --print("Main:FixedUpdate")
 
@@ -91,6 +94,7 @@ local function FixedUpdate()
 end
 
 -- The main logic lite update entry.
+-- Lua 端的慢速逻辑帧更新
 local function LiteUpdate()
     --print("Main:LiteUpdates")
 

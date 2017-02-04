@@ -1,5 +1,6 @@
 ﻿/**
  * The lua script manager class.
+ * lua脚本管理器
  *
  * @filename  YwLuaScriptMng.cs
  * @copyright Copyright (c) 2015 Yaukey/yaukeywang/WangYaoqi (yaukeywang@gmail.com) all rights reserved.
@@ -39,7 +40,8 @@ public class YwLuaScriptMng
 	private LuaFunction m_cFixedUpdateFunc = null;
 
     // The lite update function.
-	private LuaFunction m_cLiteUpdateFunc = null;
+    // Lua 端的慢速逻辑帧更新
+    private LuaFunction m_cLiteUpdateFunc = null;
 
     // The global instance.
     private static YwLuaScriptMng m_cInstance = null;

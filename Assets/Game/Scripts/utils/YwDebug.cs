@@ -1,5 +1,5 @@
 /**
- * The debug utility. DEBUG LOG 类
+ * The debug utility. 日志打印类
  *
  * @filename  YwDebug.cs
  * @copyright Copyright (c) 2015 Yaukey/yaukeywang/WangYaoqi (yaukeywang@gmail.com) all rights reserved.
@@ -17,7 +17,8 @@ public class YwDebug
 {
     /**
      * show waring log
-     * 
+     * 显示警告日志
+     *
      * @param object cMessage
      * @return void
      */
@@ -29,9 +30,10 @@ public class YwDebug
         
 #endif
     }
-    
+
     /**
      * show error log
+     * 显示错误日志
      * 
      * @param object cMessage
      * @return void
@@ -44,9 +46,10 @@ public class YwDebug
         
 #endif
     }
-    
+
     /**
      * show log
+     * 显示普通日志
      * 
      * @param object cMessage
      * @return void
@@ -59,9 +62,10 @@ public class YwDebug
         
 #endif
     }
-    
+
     /**
      * show exception log
+     * 显示异常日志
      * 
      * @param Exception cMessage
      * @return void
